@@ -19,6 +19,10 @@ use CodeIgniter\Events\Events;
  *      Events::on('create', [$myInstance, 'myMethod']);
  */
 
+Events::on('post_controller_constructor', function() {
+    helper('render');
+});
+
 Events::on('pre_system', function () {
 	if (ENVIRONMENT !== 'testing')
 	{
