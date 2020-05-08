@@ -30,6 +30,16 @@ class Validation
 		'single' => 'CodeIgniter\Validation\Views\single',
 	];
 
+	public $role = [
+		'role_name' => 'required'
+	];
+
+	public $role_errors = [
+		'role_name' => [
+			'required' => 'Role Name is Required'
+		]
+	];
+
 	//--------------------------------------------------------------------
 	// Rules
 	//--------------------------------------------------------------------

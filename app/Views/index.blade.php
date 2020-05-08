@@ -3,19 +3,38 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
-		<title>Blank Page</title>
+		<title>User Access Control</title>
 		<!-- General CSS Files -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 		
 		<!-- CSS Libraries -->
-		
+		<link rel="stylesheet" href="../assets/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+		<link rel="stylesheet" href="../assets/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css">
+		<link rel="stylesheet" href="../assets/node_modules/izitoast/css/iziToast.min.css"">
 		<!-- Template CSS -->
 		<link rel="stylesheet" href="../assets/css/style.css">
 		<link rel="stylesheet" href="../assets/css/components.css">
+		<style>
+			.gradient  {
+				color:white !important;
+				background: linear-gradient(to right, #6676ee 0%, #6777ef 100%);
+			}
+			
+			.se-pre-con {
+				position: fixed;
+				left: 0px;
+				top: 0px;
+				width: 100%;
+				height: 100%;
+				z-index: 9999;
+				background: url("./assets/img/loading.gif") center no-repeat #fff;
+			}
+		</style>
 	</head>
 	
 	<body>
+		<div class="se-pre-con"></div>
 		<div id="app">
 			<div class="main-wrapper">
 				<div class="navbar-bg"></div>
@@ -62,7 +81,9 @@
 									<li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
 								</ul>
 							</li>
-							<li><a class="nav-link" href="credits.html"><i class="fas fa-pencil-ruler"></i> <span>Credits</span></a></li>
+							<li><a class="nav-link" href="credits.html"><i class="fas fa-clipboard-list"></i> <span>Menu Management</span></a></li>
+							<li><a class="nav-link" href="credits.html"><i class="fas fa-users"></i> <span>User Management</span></a></li>
+							<li class="active"><a class="nav-link" href="/role"><i class="fas fa-chess-rook"></i> <span>Role Management</span></a></li>
 						</ul>
 					</aside>
 				</div>
@@ -93,10 +114,22 @@
 		<script src="../assets/js/stisla.js"></script>
 		
 		<!-- JS Libraies -->
+		<script src="../assets/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
+		<script src="../assets/node_modules/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+		<script src="../assets/node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
+		<script src="../assets/node_modules/izitoast/js/iziToast.min.js"></script>
+		<script src="../assets/node_modules/sweetalert/js/sweetalert.min.js"></script>
 		<!-- Template JS File -->
 		<script src="../assets/js/scripts.js"></script>
 		<script src="../assets/js/custom.js"></script>
-		@yield('js_content')
 		<!-- Page Specific JS File -->
+		@yield('js_content')
+		<script>
+			$(document).ready(function(){
+				window.addEventListener('load', function () {
+					$(".se-pre-con").fadeOut("slow");
+				});
+			});
+		</script>
 </body>
 </html>

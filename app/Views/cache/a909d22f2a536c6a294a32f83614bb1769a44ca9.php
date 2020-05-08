@@ -8,7 +8,7 @@
 <?php $__env->startSection('js_content'); ?>
 <script>
     $(document).ready(function(){
-        alert("a");
+        
     })
 </script>
 <?php $__env->stopSection(); ?>

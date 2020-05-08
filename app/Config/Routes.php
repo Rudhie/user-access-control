@@ -31,6 +31,18 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Dashboard::index');
+$routes->get('/role', 'RoleController::index');
+
+$routes->group('api', function($routes){
+
+	$routes->group('role', function($routes){
+		$routes->get('/', 'RoleController::data');
+		$routes->post('add', 'RoleController::store');
+		$routes->post('update/(:segment)', 'RoleController::update/$1');
+		$routes->delete('delete/(:segment)', 'RoleController::destroy/$1');
+	});
+
+});
 
 /**
  * --------------------------------------------------------------------
