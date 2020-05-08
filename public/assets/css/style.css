@@ -925,7 +925,7 @@ select.form-control:not([size]):not([multiple]) {
   .table:not(.table-sm) thead th {
     border-bottom: none;
     background-color: rgba(0, 0, 0, 0.04);
-    color: #666;
+    /* color: #666; */
     padding-top: 15px;
     padding-bottom: 15px; }
   .table.table-md th,
@@ -2943,7 +2943,7 @@ body:not(.sidebar-mini) .sidebar-style-2 .sidebar-menu li.active ul.dropdown-men
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
     -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards; }
+    animation-fill-mode: forwards; }    
   @-webkit-keyframes fadeinbackdrop {
     to {
       opacity: .6; } }
