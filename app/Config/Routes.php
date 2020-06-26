@@ -32,6 +32,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Dashboard::index');
 $routes->get('/role', 'RoleController::index');
+$routes->get('/user', 'UserController::index');
 
 $routes->group('api', function($routes){
 
@@ -40,6 +41,17 @@ $routes->group('api', function($routes){
 		$routes->post('add', 'RoleController::store');
 		$routes->post('update/(:segment)', 'RoleController::update/$1');
 		$routes->delete('delete/(:segment)', 'RoleController::destroy/$1');
+	});
+
+	$routes->group('user', function($routes){
+		$routes->get('/', 'UserController::data');
+		$routes->post('add', 'UserController::store');
+		$routes->post('update/(:segment)', 'UserController::update/$1');
+		$routes->delete('delete/(:segment)', 'UserController::destroy/$1');
+	});
+
+	$routes->group('filter', function($routes){
+		$routes->get('/role', 'RoleController::filter');
 	});
 
 });

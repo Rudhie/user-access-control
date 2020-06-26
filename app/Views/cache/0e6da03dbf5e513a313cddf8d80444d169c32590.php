@@ -1,59 +1,63 @@
 <?php $__env->startSection('content'); ?>
-    <div class="section-header">
-        <h1><i class="fa fa-chess-rook"></i> Role Management</h1>
-    </div>
-    <div class="section-body">
-        <div class="row">
-            <div class="col-12 col-md-4 col-lg-4">
-                <div class="card">
-                    <div class="card-header">
-                        <h4 id="form-title">Create New Role</h4>
-                    </div>
-                    <div class="card-body">
-                        <form id="form-role" method="POST" novalidate="">
-                            <div class="form-group">
-                                <label>Role Name</label>
-                                <input type="hidden" id="role_id" name="role_id"/>
-                                <input type="text" id="role_name" name="role_name" class="form-control" placeholder="Enter Role Name" required="">
-                                <div class="invalid-feedback"></div>
-                            </div>
-                            <div class="form-group">
-                                <label class="custom-switch" style="padding-left:0px;">
-                                    <input type="checkbox" id="status" name="status" class="custom-switch-input" checked>
-                                    <span class="custom-switch-indicator"></span>
-                                    <span class="custom-switch-description">Status Active</span>
-                                </label>
-                            </div>
-                            <hr/>
-                            <div class="form-group">
-                                <button type="submit" id="btn-submit" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
-                                <button type="button" id="btn-cancel" class="btn btn-warning"><i class="fas fa-window-close"></i> Cancel</button>
-                            </div>
-                        </form>
+<div class="main-content">
+    <section class="section">
+        <div class="section-header">
+            <h1><i class="fa fa-chess-rook"></i> Role Management</h1>
+        </div>
+        <div class="section-body">
+            <div class="row">
+                <div class="col-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 id="form-title">Create New Role</h4>
+                        </div>
+                        <div class="card-body">
+                            <form id="form-role" method="POST" novalidate="">
+                                <div class="form-group">
+                                    <label>Role Name</label>
+                                    <input type="hidden" id="role_id" name="role_id"/>
+                                    <input type="text" id="role_name" name="role_name" class="form-control" placeholder="Enter Role Name" required="">
+                                    <div class="invalid-feedback"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="custom-switch" style="padding-left:0px;">
+                                        <input type="checkbox" id="status" name="status" class="custom-switch-input" checked>
+                                        <span class="custom-switch-indicator"></span>
+                                        <span class="custom-switch-description">Status Active</span>
+                                    </label>
+                                </div>
+                                <hr/>
+                                <div class="form-group">
+                                    <button type="submit" id="btn-submit" class="btn btn-primary"><i class="fas fa-save"></i> Save</button>
+                                    <button type="button" id="btn-cancel" class="btn btn-warning"><i class="fas fa-window-close"></i> Cancel</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-8 col-lg-8">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table" id="table-role">
-                                <thead class="gradient">
-                                    <tr>
-                                        <th width="10%">No</th>
-                                        <th>Role Name</th>
-                                        <th>Status</th>
-                                        <th width="20%" style="text-align:center">Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody></tbody>
-                            </table>
+                <div class="col-12 col-md-8 col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table" id="table-role">
+                                    <thead class="gradient">
+                                        <tr>
+                                            <th width="10%">No</th>
+                                            <th>Role Name</th>
+                                            <th>Status</th>
+                                            <th width="20%" style="text-align:center">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+</div>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('js_content'); ?>

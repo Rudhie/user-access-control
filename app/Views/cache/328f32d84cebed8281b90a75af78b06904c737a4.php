@@ -11,7 +11,8 @@
 		<!-- CSS Libraries -->
 		<link rel="stylesheet" href="../assets/node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
 		<link rel="stylesheet" href="../assets/node_modules/datatables.net-select-bs4/css/select.bootstrap4.min.css">
-		<link rel="stylesheet" href="../assets/node_modules/izitoast/css/iziToast.min.css"">
+		<link rel="stylesheet" href="../assets/node_modules/izitoast/css/iziToast.min.css">
+		<link rel="stylesheet" href="../assets/node_modules/select2/css/select2.min.css">
 		<!-- Template CSS -->
 		<link rel="stylesheet" href="../assets/css/style.css">
 		<link rel="stylesheet" href="../assets/css/components.css">
@@ -29,6 +30,38 @@
 				height: 100%;
 				z-index: 9999;
 				background: url("./assets/img/loading.gif") center no-repeat #fff;
+			}
+
+			.button-wrapper {
+				position: relative;
+				width: 150px;
+				text-align: center;
+				margin: 10% auto;
+			}
+			
+			.button-wrapper span.label {
+				position: relative;
+				z-index: 0;
+				display: inline-block;
+				width: 100%;
+				background: #00bfff;
+				cursor: pointer;
+				color: #fff;
+				padding: 10px 0;
+				text-transform:uppercase;
+				font-size:12px;
+			}
+
+			#upload {
+				display: inline-block;
+				position: absolute;
+				z-index: 1;
+				width: 100%;
+				height: 50px;
+				top: 0;
+				left: 0;
+				opacity: 0;
+				cursor: pointer;
 			}
 		</style>
 	</head>
@@ -82,18 +115,14 @@
 								</ul>
 							</li>
 							<li><a class="nav-link" href="credits.html"><i class="fas fa-clipboard-list"></i> <span>Menu Management</span></a></li>
-							<li><a class="nav-link" href="credits.html"><i class="fas fa-users"></i> <span>User Management</span></a></li>
-							<li class="active"><a class="nav-link" href="/role"><i class="fas fa-chess-rook"></i> <span>Role Management</span></a></li>
+							<li class="active"><a class="nav-link" href="/user"><i class="fas fa-users"></i> <span>User Management</span></a></li>
+							<li><a class="nav-link" href="/role"><i class="fas fa-chess-rook"></i> <span>Role Management</span></a></li>
 						</ul>
 					</aside>
 				</div>
 				
 				<!-- Main Content -->
-				<div class="main-content">
-					<section class="section">
-						<?php echo $__env->yieldContent('content'); ?>
-					</section>
-				</div>
+				<?php echo $__env->yieldContent('content'); ?>
 				<!-- End Main Content -->
 				
 				<footer class="main-footer">
@@ -119,6 +148,7 @@
 		<script src="../assets/node_modules/datatables.net-select-bs4/js/select.bootstrap4.min.js"></script>
 		<script src="../assets/node_modules/izitoast/js/iziToast.min.js"></script>
 		<script src="../assets/node_modules/sweetalert/js/sweetalert.min.js"></script>
+		<script src="../assets/node_modules/select2/js/select2.full.min.js"></script>
 		<!-- Template JS File -->
 		<script src="../assets/js/scripts.js"></script>
 		<script src="../assets/js/custom.js"></script>

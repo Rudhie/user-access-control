@@ -10,10 +10,11 @@ class RoleController extends Controller
 
 	public function index()
 	{
-		return render('role/index');
+		return view('role/index');
 	}
 
-	public function data(){
+	public function data()
+	{
 		$roleModel = new RoleModel();
 		$data = array();
 		try {
@@ -48,6 +49,31 @@ class RoleController extends Controller
 			];
 		}
 
+		return $this->setResponseFormat('json')->respond($response, $http_code);
+	}
+
+	public function filter()
+	{
+		$roleModel = new RoleModel();
+		$dataRole = $roleModel->where("status", "Y")->findAll();
+		if($dataRole){
+			foreach ($dataRole as $role) {
+				$row = array();
+				$row['no'] = $i;
+				$row['role_id'] = $role['role_id'];
+				$row['role_name'] = $role['role_name'];
+
+				$data[] = $row;
+				$i++;
+			}
+			$http_code = 200;
+			$response = [
+				'code' => $http_code,
+				'title' => 'success',
+				'message' => 'data role has been loaded',
+				'data' => $data
+			];
+		}
 		return $this->setResponseFormat('json')->respond($response, $http_code);
 	}
 
@@ -91,7 +117,8 @@ class RoleController extends Controller
 			], $http_code);
 	}
 
-	public function update($role_id){
+	public function update($role_id)
+	{
 		$validation = \Config\Services::validation();
 
 		$role_name = $this->request->getPost('role_name');
@@ -130,7 +157,8 @@ class RoleController extends Controller
 			], $http_code);
 	}
 
-	public function destroy($role_id){
+	public function destroy($role_id)
+	{
 		try {
 			$roleModel = new RoleModel();
 			$roleModel->delete($role_id);
